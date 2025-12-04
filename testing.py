@@ -3,97 +3,103 @@ dol = int(input("Please enter Day Of Life: "))
 weight = float(input("Please enter weight in kg: "))
 
 match (en_volume, dol):
-    case (en_volume, dol) if en_volume < 40 and dol == 1:
+
+    case (ev, d) if ev < 40 and d == 1:
         cspn_type = "cSPN1"
-        print("Target Aqueous SPN : 65")
-        print("Target Lipid SPN: 6")
-        print("Target Total SPN: 71")
+        target_a = 65
+        target_l = 6
+        target_total = 71
 
-    case (en_volume, dol) if en_volume < 40 and dol == 2:
+    case (ev, d) if ev < 40 and d == 2:
         cspn_type = "cSPN1"
-        print("Target Aqueous SPN : 80")
-        print("Target Lipid SPN: 12")
-        print("Target Total SPN: 92")
+        target_a = 80
+        target_l = 12
+        target_total = 92
 
-    case (en_volume, dol) if en_volume < 40 and dol == 3:
+    case (ev, d) if ev < 40 and d == 3:
         cspn_type = "cSPN2"
-        print("Target Aqueous SPN : 95")
-        print("Target Lipid SPN: 18")
-        print("Target Total SPN: 113")
+        target_a = 95
+        target_l = 18
+        target_total = 113
 
-    case (en_volume, dol) if en_volume < 40 and dol >= 4:
+    case (ev, d) if ev < 40 and d >= 4:
         cspn_type = "cSPN2"
-        print("Target Aqueous SPN : 105")
-        print("Target Lipid SPN: 18")
-        print("Target Total SPN: 123")
+        target_a = 105
+        target_l = 18
+        target_total = 123
 
-    case (en_volume, dol) if (40 <= en_volume < 50) and dol == 2:
+    case (ev, d) if 40 <= ev < 50 and d == 2:
         cspn_type = "cSPN1"
-        print("Target Aqueous SPN : 60")
-        print("Target Lipid SPN: 12")
-        print("Target Total Fluid Volume: 112")
+        target_a = 60
+        target_l = 12
+        target_total = 112
 
-    case (en_volume, dol) if (40 <= en_volume < 50) and dol >= 3:
+    case (ev, d) if 40 <= ev < 50 and d >= 3:
         cspn_type = "cSPN2"
-        print("Target Aqueous SPN : 95")
-        print("Target Lipid SPN: 18")
-        print("Target Total Fluid Volume: 153")
+        target_a = 95
+        target_l = 18
+        target_total = 153
 
-    case (en_volume, dol) if (50 <= en_volume < 60) and dol == 2:
+    case (ev, d) if 50 <= ev < 60 and d == 2:
         cspn_type = "cSPN1"
-        print("Target Aqueous SPN : 55")
-        print("Target Lipid SPN: 12")
-        print("Target Total Fluid Volume: 117")
+        target_a = 55
+        target_l = 12
+        target_total = 117
 
-    case (en_volume, dol) if (50 <= en_volume < 60) and dol >= 3:
+    case (ev, d) if 50 <= ev < 60 and d >= 3:
         cspn_type = "cSPN2"
-        print("Target Aqueous SPN : 85")
-        print("Target Lipid SPN: 18")
-        print("Target Total Fluid Volume: 153")
+        target_a = 85
+        target_l = 18
+        target_total = 153
 
-    case (en_volume, dol) if (60 <= en_volume < 70) and dol == 2:
+    case (ev, d) if 60 <= ev < 70 and d == 2:
         cspn_type = "cSPN1"
-        print("Target Aqueous SPN : 50")
-        print("Target Lipid SPN: 12")
-        print("Target Total Fluid Volume: 122")
+        target_a = 50
+        target_l = 12
+        target_total = 122
 
-    case (en_volume, dol) if (60 <= en_volume < 70) and dol >= 3:
+    case (ev, d) if 60 <= ev < 70 and d >= 3:
         cspn_type = "cSPN2"
-        print("Target Aqueous SPN : 80")
-        print("Target Lipid SPN: 18")
-        print("Target Total Fluid Volume: 152")
+        target_a = 80
+        target_l = 12
+        target_total = 152
 
-    case (en_volume, dol) if 70 >= en_volume < 80:
+    case (ev, d) if 70 <= ev < 80:
         cspn_type = "cSPN2"
-        print("Target Aqueous SPN : 70")
-        print("Target Lipid SPN: 12")
-        print("Target Total Fluid Volume: 152")
+        target_a = 70
+        target_l = 12
+        target_total = 152
 
-    case (en_volume, dol) if 80 >= en_volume < 90:
+    case (ev, d) if 80 <= ev < 90:
         cspn_type = "cSPN2"
-        print("Target Aqueous SPN : 60")
-        print("Target Lipid SPN: 12")
-        print("Target Total Fluid Volume: 152")
+        target_a = 60
+        target_l = 12
+        target_total = 152
 
-    case (en_volume, dol) if 90 >= en_volume < 100:
+    case (ev, d) if 90 <= ev < 100:
         cspn_type = "cSPN2"
-        print("Target Aqueous SPN : 50")
-        print("Target Lipid SPN: 12")
-        print("Target Total Fluid Volume: 152")
+        target_a = 50
+        target_l = 12
+        target_total = 152
 
-    case (en_volume, dol) if 100 >= en_volume < 110:
+    case (ev, d) if 100 <= ev < 110:
         cspn_type = "cSPN2"
-        print("Target Aqueous SPN : 40")
-        print("Target Lipid SPN: 12")
-        print("Target Total Fluid Volume: 152")
+        target_a = 40
+        target_l = 12
+        target_total = 152
 
-    case (en_volume, dol) if 110 >= en_volume < 120:
+    case (ev, d) if 110 <= ev < 120:
         cspn_type = "cSPN2"
-        print("Target Aqueous SPN : 30")
-        print("Target Lipid SPN: 12")
-        print("Target Total Fluid Volume: 152")
+        target_a = 30
+        target_l = 12
+        target_total = 152
 
-    case( en_volume, dol) if 120 <= en_volume:
+    case (ev, d) if ev >= 120:
+        cspn_type = None  # prevents crashing later
         print("Stop SPN unless clinically indicated")
 
-
+if en_volume < 120:
+    print(cspn_type)
+    print(target_a)
+    print(target_l)
+    print(target_total)
