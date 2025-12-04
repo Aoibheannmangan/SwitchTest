@@ -99,7 +99,7 @@ match (en_volume, dol):
         print("Stop SPN unless clinically indicated")
 
 if en_volume < 120:
-    print(cspn_type)
-    print(target_a)
-    print(target_l)
-    print(target_total)
+    print("CPSN Type: ", cspn_type)
+    print("Target Aqueous SPN Volume: ", target_a)
+    print("Target Lipid SPN Volume: ", target_l)
+    print("Target Total Fluid Volume: ", target_total)
