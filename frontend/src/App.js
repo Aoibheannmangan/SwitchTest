@@ -24,51 +24,61 @@ export default function App() {
   return(
     <div className='App'>
       <h2>SPN Calculator</h2>
-      <form onSubmit={handleSubmit}>
-        <label>EN Volume: </label>
-        <input
-          name="en_volume"
-          type="number"
-          value={form.en_volume}
-          onChange={handleFormChange}
-          placeholder='EN Volume (mL)'
-        />
-        <label>Day of Life: </label>
-        <input
-          name="dol"
-          type="number"
-          value={form.dol}
-          onChange={handleFormChange}
-          placeholder='Day of Life (Days)'
-        />
-
-        <label>Weight: </label>
-        <input 
-          name="weight"
-          type="number"
-          value={form.weight}
-          onChange={handleFormChange}
-          placeholder='Weight (kg)'
-        />
-        <button type="submit">Calculate</button>
-      </form>
-      {result && (
-        <div>
-          {"message" in result ? (
-            <h3>{result.message}</h3>
-          ) : (
-            <>
-              <p><strong>CSPN Type:</strong> {result.cspn_type}</p>
-              <p><strong>Aqueous Volume: </strong> {result.target_a} mL (min: {result.min_a}, max: {result.max_a} )</p>
-              <p><strong>Lipid Volume: </strong>{result.target_l}</p>
-              <p><strong>Total SPN Volume: </strong>{result.target_total}</p>
-            </>
-          )}
-
+      <div className="calculator-container">
+        <div className="form-wrapper">
+          <div className="calculator-card">
+            <form onSubmit={handleSubmit}>
+              <div className='input-group'>
+                <label>EN Volume: </label>
+                <input
+                  name="en_volume"
+                  type="number"
+                  value={form.en_volume}
+                  onChange={handleFormChange}
+                  placeholder='EN Volume (mL)'
+                />
+              </div>
+              <div className='input-group'>
+                <label>Day of Life: </label>
+                <input
+                  name="dol"
+                  type="number"
+                  value={form.dol}
+                  onChange={handleFormChange}
+                  placeholder='Day of Life (Days)'
+                />
+              </div>
+              <div className='input-group'>
+                <label>Weight: </label>
+                <input 
+                  name="weight"
+                  type="number"
+                  value={form.weight}
+                  onChange={handleFormChange}
+                  placeholder='Weight (kg)'
+                />
+              </div>
+              <button type="submit" className="calculate-button">Calculate</button>
+            </form>
+            {result && (
+              <div>
+                {"message" in result ? (
+                  <h3>{result.message}</h3>
+                ) : (
+                  <>
+                    <p><strong>CSPN Type:</strong> {result.cspn_type}</p>
+                    <p><strong>Aqueous Volume: </strong> {result.target_a} mL (min: {result.min_a}, max: {result.max_a} )</p>
+                    <p><strong>Lipid Volume: </strong>{result.target_l}</p>
+                    <p><strong>Total SPN Volume: </strong>{result.target_total}</p>
+                  </>
+                )}
+              </div>
+            )}
+            <p className="warning-text">Aim to provide target SPN volumes. Min SPN volumes meet lower end of nutrition recommendations. Do not exceed max SPN volumes.</p>
+          </div>
+          </div>
         </div>
-
-      )}
-    </div>
+      </div>
   )
 };
 
