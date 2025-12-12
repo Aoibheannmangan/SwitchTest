@@ -87,7 +87,7 @@ export default function App() {
               </div>
             )}
             <p className="warning-text">Aim to provide target SPN volumes. Min SPN volumes meet lower end of nutrition recommendations. Do not exceed max SPN volumes.</p>
-            <button onClick={handlePopUpOpen}>Fluid allowance less than SPN?</button>
+            <button onClick={handlePopUpOpen} className='fluid-button'>Fluid allowance less than SPN?</button>
           </div>
           </div>
         </div>

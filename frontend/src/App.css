@@ -104,12 +104,11 @@ input-group {
   border: none;
   border-radius: 4px;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: background 0.3s, transform 0.1s;
   letter-spacing: 1px;
-  font-family: "Sansation", serif;
   align-self: center;
 }
 
@@ -144,5 +143,21 @@ input-group {
 
 .popup-list li {
   margin: 0.4rem 0;
+  line-height: 1.5;
+}
 
+.fluid-button {
+  width: 80%;
+  margin-top: 20px;
+  padding: 0.8rem;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  color: #597ef7;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+  letter-spacing: 1px;
+  align-self: center;
 }
