@@ -2,10 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import axios from 'axios';
+import PopUp from './PopUp';
 
 export default function App() {
   const [form, setForm] = useState({ en_volume: "", dol: "", weight: ""});
   const [result, setResult] = useState(null);
+  const [popUpOpen, setPopUpOpen] = useState(false);
 
   const handleFormChange = (e) => {
     setForm({...form, [e.target.name]: e.target.value});
@@ -21,6 +23,11 @@ export default function App() {
       });
     setResult(res.data);
   };
+
+  const handlePopUpOpen = () => {
+    setPopUpOpen(true);
+  };
+
   return(
     <div className='App'>
       <div className='header'>
@@ -80,9 +87,22 @@ export default function App() {
               </div>
             )}
             <p className="warning-text">Aim to provide target SPN volumes. Min SPN volumes meet lower end of nutrition recommendations. Do not exceed max SPN volumes.</p>
+            <button onClick={handlePopUpOpen}>Fluid allowance less than SPN?</button>
           </div>
           </div>
         </div>
+        <PopUp 
+          isOpen={popUpOpen}
+          onClose={() => setPopUpOpen(false)}
+          message={
+            <ol className='popup-list'>
+              <li>Liberalise the daily fluid allowance as clinically acceptable</li>
+              <li>Provide target lipid volume</li>
+              <li>Reduce the Aqueous volume within the total fluid allowance.</li>
+              <li>Example: 120 (Total SPN) - 40 (EN) - 18 (lipid) = 62 (Aqueous)</li>
+            </ol>}
+          option1={'Cancel'}
+        />
       </div>
   )
 };
