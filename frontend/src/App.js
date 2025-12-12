@@ -23,7 +23,9 @@ export default function App() {
   };
   return(
     <div className='App'>
-      <h2>SPN Calculator</h2>
+      <div className='header'>
+        <h2>SPN Calculator</h2>
+      </div>
       <div className="calculator-container">
         <div className="form-wrapper">
           <div className="calculator-card">
@@ -67,9 +69,12 @@ export default function App() {
                 ) : (
                   <>
                     <p><strong>CSPN Type:</strong> {result.cspn_type}</p>
-                    <p><strong>Aqueous Volume: </strong> {result.target_a} mL (min: {result.min_a}, max: {result.max_a} )</p>
-                    <p><strong>Lipid Volume: </strong>{result.target_l}</p>
-                    <p><strong>Total SPN Volume: </strong>{result.target_total}</p>
+                    <p><strong>Aqueous Volume: </strong> {result.target_a} mL/kg/d (min: {result.min_a}, max: {result.max_a} )</p>
+                    <p><strong>Lipid Volume: </strong>{result.target_l} mL/kg/d</p>
+                    <p><strong>Total SPN Volume: </strong>{result.target_total} mL/kg/d</p>
+                    <p className='weight_paragraph'><strong>Aqueous Volume for patient weight: </strong>{result.targeta_with_weight} mL/kg/d</p>
+                    <p className='weight_paragraph'><strong>Lipid Volume for patient weight: </strong>{result.targetl_with_weight} mL/kg/d </p>
+                    <p className='weight_paragraph'><strong>Total SPN Volume for patient weight: </strong>{result.targettotal_with_weight} mL/kg/d</p>
                   </>
                 )}
               </div>

@@ -122,3 +122,16 @@ input-group {
 .calculate-button:active {
   transform: scale(0.98);
 }
+
+.weight_paragraph {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #0004ff;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: 10px 16px;
+  background:  #ffffff;
+}

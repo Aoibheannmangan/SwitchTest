@@ -152,10 +152,13 @@ def calculate():
     return jsonify({
         "cspn_type": cspn_type,
         "target_a": target_a,
+        "targeta_with_weight": target_a * weight,
         "min_a": min_a,
         "max_a": max_a,
         "target_l": target_l,
-        "target_total": target_total
+        "targetl_with_weight": target_l * weight,
+        "target_total": target_total,
+        "targettotal_with_weight": target_total * weight
     })
 
 
